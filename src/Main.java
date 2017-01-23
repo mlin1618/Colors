@@ -1,7 +1,8 @@
 /**
  * Created by ml996 on 1/23/17.
  */
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 public class Main {
     public static String rgbToHex(int[] a){
         String hex = "";
@@ -23,10 +24,10 @@ public class Main {
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 2; j++){
                 int x = s.charAt(2*i + j);
-                if(x>=65)
+                if(x>=65 && x <=70)
                     a[i] += (x - 55) * (int)(Math.pow(16, 1-j));
                 else
-                    a[i] += x * (int)(Math.pow(16,1-j));
+                    a[i] += (x - 48) * (int)(Math.pow(16,1-j));
             }
         }
         return a;
@@ -44,7 +45,15 @@ public class Main {
     public static String HTMLtoHex(String h){
 
     }*/
-    public static void main(String[] args){
-        
+    public static void main(String[] args) throws IOException{
+        File f = new File("HTML_colors.csv");
+        Scanner scan = new Scanner(f);
+        String[][] htmlcolors = new String[140][3];
+        for(int i = 0; i < htmlcolors.length; i++){
+            for(int j = 0; j < htmlcolors[0].length; j++){
+                htmlcolors[i][j] = scan.next();
+            }
+        }
+        System.out.println(Arrays.toString(hexToRgb("F0F0F0")));
     }
 }
