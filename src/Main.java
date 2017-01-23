@@ -54,6 +54,24 @@ public class Main {
                 htmlcolors[i][j] = scan.next();
             }
         }
-        System.out.println(Arrays.toString(hexToRgb("F0F0F0")));
+        System.out.println("Welcome to the Color Converter!\n What would you like to convert from? Please enter 1, 2, or 3 \n (1) RGB\n(2) HEX\n (3) HTML Name");
+        Scanner sc = new Scanner(System.in);
+        String n1 = sc.nextLine();
+        System.out.println("What would you like to convert to? Please enter 1, 2, or 3 \n" + " (1) RGB\n" + "(2) HEX\n" + " (3) HTML Name");
+        String n2 = sc.nextLine();
+        switch(n1+n2){
+            case "12":
+                break;
+            case "13":
+                break;
+            case "21":
+                break;
+            case "23":
+                break;
+            case "31":
+                break;
+            case "32":
+                break;
+        }
     }
 }
